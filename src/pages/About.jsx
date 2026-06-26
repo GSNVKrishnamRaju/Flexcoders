@@ -1,19 +1,33 @@
 import { Link } from 'react-router-dom';
 import PageHeader from '../components/PageHeader';
 import Reveal from '../components/Reveal';
+import { useState, useEffect } from 'react';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, ResponsiveContainer } from 'recharts';
 
 function GrowthChart() {
+  const [chartSize, setChartSize] = useState({ height: 300, rightMargin: 40, leftMargin: 10, tickSize: 14, dotR: 6 });
+  useEffect(() => {
+    const update = () => {
+      const w = window.innerWidth;
+      if (w < 360) setChartSize({ height: 130, rightMargin: 10, leftMargin: 5, tickSize: 11, dotR: 4 });
+      else if (w < 480) setChartSize({ height: 170, rightMargin: 15, leftMargin: 8, tickSize: 12, dotR: 5 });
+      else if (w < 768) setChartSize({ height: 220, rightMargin: 30, leftMargin: 10, tickSize: 14, dotR: 6 });
+      else setChartSize({ height: 300, rightMargin: 40, leftMargin: 10, tickSize: 14, dotR: 6 });
+    };
+    update();
+    window.addEventListener('resize', update);
+    return () => window.removeEventListener('resize', update);
+  }, []);
   const data = [
     { year: '2025', Students: 4000, Courses: 6 },
     { year: '2026', Students: 10000, Courses: 20 },
   ];
   return (
     <Reveal>
-      <div style={{ background: 'var(--card-bg)', borderRadius: 20, padding: 32, marginTop: 20, boxShadow: 'var(--shadow)' }}>
+      <div className="growth-chart-card">
         <h3 style={{ textAlign: 'center', marginBottom: 28, fontWeight: 700 }}>Growth Overview</h3>
-        <ResponsiveContainer width="100%" height={300}>
-          <AreaChart data={data} margin={{ top: 20, right: 40, left: 20, bottom: 10 }}>
+        <ResponsiveContainer width="100%" height={chartSize.height}>
+          <AreaChart data={data} margin={{ top: 20, right: chartSize.rightMargin, left: chartSize.leftMargin, bottom: 10 }}>
             <defs>
               <linearGradient id="studentsGrad" x1="0" y1="0" x2="0" y2="1">
                 <stop offset="5%" stopColor="#6c63ff" stopOpacity={0.3} />
@@ -25,14 +39,14 @@ function GrowthChart() {
               </linearGradient>
             </defs>
             <CartesianGrid strokeDasharray="3 3" stroke="var(--border-color)" />
-            <XAxis dataKey="year" tick={{ fill: 'var(--text-secondary)', fontSize: 14, fontWeight: 600 }} />
-            <YAxis yAxisId="students" tick={{ fill: 'var(--text-secondary)' }} />
-            <YAxis yAxisId="courses" orientation="right" tick={{ fill: 'var(--text-secondary)' }} />
-            <Area yAxisId="students" type="monotone" dataKey="Students" stroke="#6c63ff" strokeWidth={3} fill="url(#studentsGrad)" dot={{ r: 6, fill: '#6c63ff', strokeWidth: 0 }} animationDuration={1500} />
-            <Area yAxisId="courses" type="monotone" dataKey="Courses" stroke="#00b894" strokeWidth={3} fill="url(#coursesGrad)" dot={{ r: 6, fill: '#00b894', strokeWidth: 0 }} animationDuration={1500} />
+            <XAxis dataKey="year" tick={{ fill: 'var(--text-secondary)', fontSize: chartSize.tickSize, fontWeight: 600 }} />
+            <YAxis yAxisId="students" tick={{ fill: 'var(--text-secondary)', fontSize: chartSize.tickSize }} />
+            <YAxis yAxisId="courses" orientation="right" tick={{ fill: 'var(--text-secondary)', fontSize: chartSize.tickSize }} />
+            <Area yAxisId="students" type="monotone" dataKey="Students" stroke="#6c63ff" strokeWidth={3} fill="url(#studentsGrad)" dot={{ r: chartSize.dotR, fill: '#6c63ff', strokeWidth: 0 }} animationDuration={1500} />
+            <Area yAxisId="courses" type="monotone" dataKey="Courses" stroke="#00b894" strokeWidth={3} fill="url(#coursesGrad)" dot={{ r: chartSize.dotR, fill: '#00b894', strokeWidth: 0 }} animationDuration={1500} />
           </AreaChart>
         </ResponsiveContainer>
-        <div style={{ display: 'flex', justifyContent: 'center', gap: 48, marginTop: 12 }}>
+        <div className="growth-chart-legend">
           <div style={{ textAlign: 'center' }}>
             <div style={{ fontSize: '1.4rem', fontWeight: 800, color: '#6c63ff' }}>4K → 10K</div>
             <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>Students</div>
@@ -146,20 +160,20 @@ export default function About() {
         <div className="container">
           <Reveal>
             <div className="mv-card" style={{ padding: 40 }}>
-              <h2 style={{ fontSize: '2rem', fontWeight: 800, marginBottom: 16, textAlign: 'center' }}>Life at FlexCoders</h2>
+              <h2 className="life-heading">Life at FlexCoders</h2>
               <p style={{ color: 'var(--text-secondary)', maxWidth: 700, margin: '0 auto 32px', lineHeight: 1.8, textAlign: 'center' }}>
                 At FlexCoders, we believe in fostering a culture of innovation, collaboration, and continuous learning. 
                 Our team is a family of passionate educators, developers, and creative thinkers who work together to 
                 transform lives through quality education.
               </p>
-              <div className="life-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 16 }}>
+              <div className="life-grid">
                 {[
                   'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=400&h=280&fit=crop',
                   'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=400&h=280&fit=crop',
                   'https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=280&fit=crop',
                   'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=400&h=280&fit=crop',
                 ].map((url, i) => (
-                  <img key={i} src={url} alt="Team at work" loading="lazy" style={{ width: '100%', height: 200, objectFit: 'cover', borderRadius: 14, boxShadow: '0 4px 15px rgba(0,0,0,0.08)' }} />
+                  <img key={i} src={url} alt="Team at work" loading="lazy" className="life-grid-img" />
                 ))}
               </div>
             </div>
@@ -181,17 +195,7 @@ export default function About() {
               { name: 'Grad Skilt', logo: 'https://gradskilt.com/wp-content/uploads/2023/01/GradSkilt-Logo.png', desc: 'Bridging the gap between academia and industry through skill-based learning.', accent: '#6c63ff' },
             ].map((p, i) => (
               <Reveal key={i}>
-                <div className="partner-card" style={{
-                  width: 260,
-                  borderRadius: 12,
-                  overflow: 'hidden',
-                  border: '1px solid var(--border-color)',
-                  transition: 'transform 0.3s, box-shadow 0.3s',
-                  cursor: 'default',
-                }}
-                  onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-4px)'; e.currentTarget.style.boxShadow = '0 8px 24px rgba(0,0,0,0.1)'; }}
-                  onMouseLeave={(e) => { e.currentTarget.style.transform = ''; e.currentTarget.style.boxShadow = ''; }}
-                >
+                <div className="partner-card">
                   <div style={{ height: 4, background: p.accent }} />
                   <div style={{ padding: '28px 24px 24px', textAlign: 'center' }}>
                     <img src={p.logo} alt={p.name} style={{ height: 70, marginBottom: 14, objectFit: 'contain' }} onError={(e) => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block'; }} />

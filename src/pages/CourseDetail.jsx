@@ -28,7 +28,7 @@ export default function CourseDetail() {
     return (
       <section className="section" style={{ textAlign: 'center', paddingTop: 140 }}>
         <div className="container">
-          <h1 style={{ fontSize: '3rem', fontWeight: 800, marginBottom: 16 }}>Course Not Found</h1>
+          <h1 className="not-found-heading">Course Not Found</h1>
           <p style={{ color: 'var(--text-secondary)', marginBottom: 32 }}>The course you're looking for doesn't exist.</p>
           <Link to="/courses" className="btn btn-primary">View All Courses</Link>
         </div>
@@ -209,7 +209,7 @@ export default function CourseDetail() {
 
       <section className="section" style={{ textAlign: 'center' }}>
         <div className="container">
-          <h2 style={{ fontSize: '2rem', fontWeight: 800, marginBottom: 16 }}>Ready to Get Started?</h2>
+          <h2 className="cta-heading">Ready to Get Started?</h2>
           <p style={{ color: 'var(--text-secondary)', marginBottom: 32, fontSize: '1.1rem' }}>Enroll now and take the first step towards your career.</p>
           <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link to="/contact?ref=enroll" className="btn-logo"><i className="fas fa-graduation-cap"></i> Enroll Now — {course.price}</Link>

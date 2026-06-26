@@ -36,8 +36,8 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="hero-image">
-            <div className="hero-image-placeholder" style={{ overflow: 'hidden', boxShadow: 'var(--shadow-lg)', borderRadius: 30, height: 500, width: '100%', maxWidth: 500 }}>
+            <div className="hero-image">
+            <div className="hero-image-placeholder" style={{ overflow: 'hidden', boxShadow: 'var(--shadow-lg)', borderRadius: 30, width: '100%', maxWidth: 500 }}>
               <img src={theme === 'dark' ? '/hero-image-dark.png' : '/hero-image.png'} alt="Students learning" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             </div>
           </div>
@@ -148,7 +148,7 @@ export default function Home() {
                 { name: 'Charmi Shreya', role: 'Online Training', avatar: 'CS', text: 'Way of teaching is good. Having a separate LMS portal and app with facility to see recorded videos is very helpful. Good support from mentors throughout.' },
                 { name: 'Rishi Kone', role: 'Technical Skills', avatar: 'RK', text: 'Great platform to learn and improve technical skills. The trainers are supportive, classes are practical, and the learning environment is very good for students.' },
               ].map((t, i) => (
-                <div className="testimonial-card" key={i} style={{ minWidth: 340, maxWidth: 340, flexShrink: 0 }}>
+                <div className="testimonial-card" key={i}>
                   <div className="stars">{'★'.repeat(5)}</div>
                   <p>"{t.text}"</p>
                   <div className="testimonial-author">
@@ -172,7 +172,7 @@ export default function Home() {
                 { name: 'Charmi Shreya', role: 'Online Training', avatar: 'CS', text: 'Way of teaching is good. Having a separate LMS portal and app with facility to see recorded videos is very helpful. Good support from mentors throughout.' },
                 { name: 'Rishi Kone', role: 'Technical Skills', avatar: 'RK', text: 'Great platform to learn and improve technical skills. The trainers are supportive, classes are practical, and the learning environment is very good for students.' },
               ].map((t, i) => (
-                <div className="testimonial-card" key={`dup-${i}`} style={{ minWidth: 340, maxWidth: 340, flexShrink: 0 }}>
+                <div className="testimonial-card" key={`dup-${i}`}>
                   <div className="stars">{'★'.repeat(5)}</div>
                   <p>"{t.text}"</p>
                   <div className="testimonial-author">
@@ -194,7 +194,7 @@ export default function Home() {
         <div className="container">
           <Reveal>
             <div className="newsletter-box">
-              <h2 style={{ fontSize: '2rem', fontWeight: 800, marginBottom: 12 }}>Stay Updated</h2>
+              <h2>Stay Updated</h2>
               <p style={{ color: 'var(--text-secondary)' }}>Get the latest course updates, industry insights, and career tips delivered to your inbox.</p>
               <form className="newsletter-form" onSubmit={(e) => { e.preventDefault(); alert('Subscribed!'); e.target.reset(); }}>
                 <input type="email" placeholder="Enter your email address" required />

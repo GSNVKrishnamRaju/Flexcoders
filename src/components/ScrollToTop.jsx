@@ -12,7 +12,6 @@ export default function ScrollToTop() {
   return (
     <button
       className={`scroll-top ${visible ? 'visible' : ''}`}
-      style={{ bottom: 90 }}
       onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
       title="Scroll to top"
     >

@@ -31,7 +31,7 @@ export default function ReferEarn() {
             <span className="refer-badge">REFER</span>
             <h1 className="refer-heading">
               Refer <br/>
-              someone<br />
+              <span style={{whiteSpace:'nowrap'}}>someone</span><br />
               and Earn upto<br />
               <span className="refer-amount">₹500</span>
             </h1>
@@ -39,18 +39,20 @@ export default function ReferEarn() {
             <button className="refer-btn" onClick={() => setShowForm(true)}>Start Referring</button>
           </div>
           <div className="refer-hero-visual">
-            <div className="coin-scene">
-              <div className="coin-glow-bg"></div>
-              <div className="coin c1"><span>₹</span></div>
-              <div className="coin c2"><span>₹</span></div>
-              <div className="coin c3"><span>₹</span></div>
-              <div className="coin c4"><span>₹</span></div>
-              <div className="coin c5"><span>₹</span></div>
-              <div className="coin c6"><span>₹</span></div>
-              <div className="coin c7"><span>₹</span></div>
-              <div className="coin c8"><span>₹</span></div>
-              <div className="coin c9"><span>₹</span></div>
-              <div className="coin c10"><span>₹</span></div>
+            <div className="coin-scene-clip">
+              <div className="coin-scene">
+                <div className="coin-glow-bg"></div>
+                <div className="coin c1"><span>₹</span></div>
+                <div className="coin c2"><span>₹</span></div>
+                <div className="coin c3"><span>₹</span></div>
+                <div className="coin c4"><span>₹</span></div>
+                <div className="coin c5"><span>₹</span></div>
+                <div className="coin c6"><span>₹</span></div>
+                <div className="coin c7"><span>₹</span></div>
+                <div className="coin c8"><span>₹</span></div>
+                <div className="coin c9"><span>₹</span></div>
+                <div className="coin c10"><span>₹</span></div>
+              </div>
             </div>
           </div>
         </div>
@@ -91,7 +93,6 @@ export default function ReferEarn() {
           <div className="features-grid">
             {[
               { icon: '🎁', title: '₹500 Per Referral', desc: <>Earn <span className="refer-amount-inline">₹500</span> cashback for every friend who enrolls. Refer as many as you like!</> },
-              { icon: '🏆', title: 'Monthly Bonus', desc: 'Top referrers each month win Amazon vouchers, free courses, and more.' },
               { icon: '💸', title: 'Quick Payout', desc: 'Rewards are processed within 7 days of your referral completing their first month.' },
               { icon: '📉', title: 'Friend Gets 10% Off', desc: 'Your referred friend gets an instant 10% discount on course fees — a win-win!' },
             ].map((r, i) => (

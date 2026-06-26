@@ -51,9 +51,9 @@ export default function Contact() {
           <div className="contact-grid">
             <Reveal className="reveal-left">
               <div>
-                <h2 style={{ fontSize: '1.8rem', fontWeight: 800, marginBottom: 24 }}>Get In Touch</h2>
+                <h2 className="contact-heading">Get In Touch</h2>
                 <form ref={formRef} className="contact-form" action={GOOGLE_FORM_ACTION || '#'} method="POST" target={GOOGLE_FORM_ACTION ? 'hidden_iframe' : '_self'} onSubmit={handleSubmit}>
-                  <div className="contact-name-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+                  <div className="contact-name-grid">
                     <input ref={firstInputRef} type="text" name={ENTRY.fname} placeholder="First Name" required />
                     <input type="text" name={ENTRY.lname} placeholder="Last Name" required />
                   </div>
@@ -102,11 +102,11 @@ export default function Contact() {
             <h2>Our Location</h2>
             <p>Visit us at our campus for a personal consultation.</p>
           </div>
-          <div className="map-wrapper" style={{ borderRadius: 24, overflow: 'hidden', border: '1px solid var(--border-color)', height: 500 }}>
+          <div className="map-wrapper">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6591.391643131647!2d78.38913424303044!3d17.4521991!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9136fc7f7665%3A0x65271cecad4703c3!2sFlexcoders!5e1!3m2!1sen!2sin!4v1781874339109!5m2!1sen!2sin"
               width="100%"
-              height="500"
+              height="100%"
               className="map-iframe"
               style={{ border: 0 }}
               allowFullScreen=""
