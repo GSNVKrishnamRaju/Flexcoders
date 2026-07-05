@@ -30,10 +30,7 @@ export default function ReferEarn() {
           <div className="refer-hero-content">
             <span className="refer-badge">REFER</span>
             <h1 className="refer-heading">
-              Refer <br/>
-              <span style={{whiteSpace:'nowrap'}}>someone</span><br />
-              and Earn upto<br />
-              <span className="refer-amount">₹500</span>
+              Refer someone and Earn upto <span className="refer-amount">₹500</span>
             </h1>
             <p className="refer-desc">Cashback/Vouchers on every successful enrollment.</p>
             <button className="refer-btn" onClick={() => setShowForm(true)}>Start Referring</button>

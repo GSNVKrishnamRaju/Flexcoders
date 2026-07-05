@@ -53,12 +53,12 @@ export default function Home() {
           </div>
           <div className="features-grid">
             {[
-              { icon: '🎓', title: 'Expert Mentors', desc: 'Learn from industry professionals with years of real-world experience and deep domain expertise.' },
-              { icon: '💻', title: 'Hands-On Learning', desc: 'Learn from industry professionals with years of real-world experience and deep domain expertise.' },
-              { icon: '🏆', title: 'Certification', desc: 'Learn from industry professionals with years of real-world experience and deep domain expertise.' },
-              { icon: '🚀', title: 'Placement Assistance', desc: 'Learn from industry professionals with years of real-world experience and deep domain expertise.' },
-              { icon: '📅', title: 'Flexible Scheduling', desc: 'Learn from industry professionals with years of real-world experience and deep domain expertise.' },
-              { icon: '👥', title: 'Community', desc: 'Learn from industry professionals with years of real-world experience and deep domain expertise.' },
+              { icon: '🎓', title: 'Expert Mentors', desc: 'Learn from 25+ industry professionals who bring real-world experience and deep domain expertise to every session.' },
+              { icon: '💻', title: 'Hands-On Learning', desc: 'Build real projects and case studies that prepare you for actual job challenges from day one.' },
+              { icon: '🏆', title: 'Certification', desc: 'Earn industry-recognized certificates that validate your skills and boost your career profile.' },
+              { icon: '🚀', title: 'Placement Assistance', desc: 'Get dedicated placement support, resume reviews, mock interviews and direct referrals.' },
+              { icon: '📅', title: 'Flexible Scheduling', desc: 'Learn at your own pace with weekday and weekend batches designed for working professionals.' },
+              { icon: '👥', title: 'Community', desc: 'Join a vibrant network of learners, alumni and mentors who support your growth journey.' },
             ].map((f, i) => (
               <Reveal key={i}>
                 <div className="feature-card">

@@ -182,13 +182,13 @@ export default function CourseDetail() {
             </p>
             <div className="cert-grid">
               <div className="cert-card">
-                <div className="cert-badge cert-badge-secondary">Participation</div>
+                <div className="cert-badge">Completion</div>
                 <div className="cert-image-wrapper">
                   <img src="/images/certificate-completion.png" alt="Completion Certificate" className="cert-image" />
                 </div>
               </div>
               <div className="cert-card">
-                <div className="cert-badge">Completion</div>
+                <div className="cert-badge cert-badge-secondary">Participation</div>
                 <div className="cert-image-wrapper">
                   <img src="/images/certificate-participation.png" alt="Participation Certificate" className="cert-image" />
                 </div>
@@ -259,7 +259,7 @@ export default function CourseDetail() {
           <p style={{ color: 'var(--text-secondary)', marginBottom: 32, fontSize: '1.1rem' }}>Enroll now and take the first step towards your career.</p>
           <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link to="/contact?ref=enroll" className="btn-logo"><i className="fas fa-graduation-cap"></i> Enroll Now — {course.price}</Link>
-            <Link to="/courses" className="btn-logo" style={{ background: '#15183A', boxShadow: '0 5px 20px rgba(21,24,58,0.3)' }}><i className="fas fa-arrow-left"></i> Back to Courses</Link>
+            <Link to="/courses" className="btn-outline-logo"><i className="fas fa-arrow-left"></i> Back to Courses</Link>
           </div>
         </div>
       </section>

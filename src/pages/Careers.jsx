@@ -223,7 +223,7 @@ export default function Careers() {
                   <div className={`cdc-job-details ${expanded === i ? 'cdc-expanded' : ''}`}>
                     <div className="cdc-job-description">
                       {job.details.split('\n').map((line, j) => {
-                        if (line.startsWith('•')) return <li key={j}>{line.slice(2)}</li>;
+                        if (line.startsWith('•')) return <p key={j} className="cdc-bullet">{line.slice(2)}</p>;
                         if (line.match(/^[A-Za-z\s]+:$/)) return <h4 key={j} className="cdc-section-title">{line}</h4>;
                         if (line.trim() === '') return <br key={j} />;
                         return <p key={j}>{line}</p>;

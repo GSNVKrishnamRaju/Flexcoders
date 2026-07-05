@@ -123,22 +123,40 @@ export default function About() {
         </div>
       </section>
 
-      {/* MISSION & VISION */}
-      <section className="section" style={{ background: 'var(--bg-secondary)' }}>
+      {/* OUR MISSION */}
+      <section className="section">
         <div className="container">
-          <div className="mission-vision">
+          <div className="ms-row">
             <Reveal className="reveal-left">
-              <div className="mv-card">
-                <div className="mv-icon">🎯</div>
-                <h2>Our Mission</h2>
-                <p>To democratize quality education and make industry-relevant skills accessible to everyone. We strive to create learning experiences that are practical, engaging, and career-focused.</p>
+              <div className="ms-card">
+                <span className="ms-emoji">🎯</span>
+                <h3>Our Mission</h3>
               </div>
             </Reveal>
             <Reveal className="reveal-right">
-              <div className="mv-card">
-                <div className="mv-icon">🔭</div>
-                <h2>Our Vision</h2>
-                <p>To be the most trusted learning platform that empowers millions of professionals worldwide to achieve their career goals through expert-led education and unwavering support.</p>
+              <div className="ms-desc">
+                <p>To democratize quality education and make industry-relevant skills accessible to everyone. We create learning experiences that are practical, engaging, and career-focused — bridging the gap between academic knowledge and industry expectations.</p>
+                <p>Through hands-on projects, expert mentorship, and dedicated placement support, we empower thousands of learners to build the careers they deserve.</p>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* OUR VISION */}
+      <section className="section" style={{ background: 'var(--bg-secondary)' }}>
+        <div className="container">
+          <div className="vs-row">
+            <Reveal className="reveal-left">
+              <div className="vs-card">
+                <span className="vs-emoji">🔭</span>
+                <h3>Our Vision</h3>
+              </div>
+            </Reveal>
+            <Reveal className="reveal-right">
+              <div className="vs-desc">
+                <p>To be the most trusted learning platform that empowers millions of professionals worldwide. We are building a future where expert-led education is accessible to everyone, everywhere — transforming careers through knowledge and support.</p>
+                <p>With a commitment to innovation and excellence, we aim to reach every corner of the globe and make a lasting impact on the world of education.</p>
               </div>
             </Reveal>
           </div>
@@ -211,7 +229,7 @@ export default function About() {
             <Reveal><h2>Our Partners</h2></Reveal>
             <Reveal><p>We are proud to be associated with these prestigious organizations.</p></Reveal>
           </div>
-          <div style={{ display: 'flex', justifyContent: 'center', gap: 32, flexWrap: 'wrap' }}>
+          <div className="partner-grid">
             {[
               { name: 'Skill India', logo: 'https://upload.wikimedia.org/wikipedia/en/3/3e/Skill_India.png', desc: 'National skill development initiative empowering youth with industry-relevant training.', accent: '#ff9933' },
               { name: 'Startup India', logo: 'https://officechai.com/wp-content/uploads/2016/12/standup-india-1-1024x570.jpg', desc: 'Government flagship initiative to build a strong ecosystem for nurturing innovation.', accent: '#138808' },
@@ -221,8 +239,10 @@ export default function About() {
                 <div className="partner-card">
                   <div style={{ height: 4, background: p.accent }} />
                   <div style={{ padding: '28px 24px 24px', textAlign: 'center' }}>
-                    <img src={p.logo} alt={p.name} style={{ height: 80, marginBottom: 14, objectFit: 'contain' }} onError={(e) => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block'; }} />
-                    <div style={{ fontSize: '2.5rem', marginBottom: 14, display: 'none' }}>{['🇮🇳','🚀','🎓'][i]}</div>
+                    <div className="partner-logo-wrap">
+                      <img src={p.logo} alt={p.name} onError={(e) => { e.target.style.display = 'none'; e.target.parentNode.querySelector('.partner-fallback').style.display = 'flex'; }} />
+                      <div className="partner-fallback">{['🇮🇳','🚀','🎓'][i]}</div>
+                    </div>
                     <h3 style={{ margin: '0 0 6px', fontSize: '1.15rem' }}>{p.name}</h3>
                     <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.5 }}>{p.desc}</p>
                   </div>
