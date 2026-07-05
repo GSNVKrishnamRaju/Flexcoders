@@ -26,7 +26,7 @@ export default function ReferEarn() {
     <div className="refer-page">
       {/* HERO */}
       <section className="refer-hero">
-        <div className="refer-hero-inner">
+        <div className="refer-hero-inner mt-4">
           <div className="refer-hero-content">
             <span className="refer-badge">REFER</span>
             <h1 className="refer-heading">

@@ -76,9 +76,9 @@ export default function Contact() {
             <Reveal className="reveal-right">
               <div className="contact-info">
                 {[
-                  { icon: '📍', title: 'Visit Us', detail: <>Hyderabad, Telangana, India</> },
-                  { icon: '📞', title: 'Call Us', detail: <>+91 90307 21969</> },
-                  { icon: '✉️', title: 'Email Us', detail: <>info@flexcoders.in<br />support@flexcoders.in</> },
+                  { icon: '📍', title: 'Visit Us', detail: <>Madhapur, Hyderabad, Telangana, India</> },
+                  { icon: '📞', title: 'Call Us', detail: <>+91 9989783404</> },
+                  { icon: '✉️', title: 'Email Us', detail: <>info@flexcoders.in </> },
                   { icon: '🕐', title: 'Working Hours', detail: <>Mon - Sat: 9:00 AM - 8:00 PM<br />Sunday: 10:00 AM - 4:00 PM</> },
                 ].map((c, i) => (
                   <div className="contact-info-card" key={i}>

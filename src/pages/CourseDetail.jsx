@@ -9,6 +9,7 @@ export default function CourseDetail() {
   const [openCurriculum, setOpenCurriculum] = useState(null);
   const [showCurriculumModal, setShowCurriculumModal] = useState(false);
   const [showEnrollPopup, setShowEnrollPopup] = useState(false);
+  const [showCertModal, setShowCertModal] = useState(false);
   const [enrollSubmitted, setEnrollSubmitted] = useState(false);
   const [form, setForm] = useState({ name: '', email: '', phone: '', message: '' });
 
@@ -65,16 +66,6 @@ export default function CourseDetail() {
                   </button>
                 </div>
               </Reveal>
-              <Reveal>
-                <div className="cd-btn-row">
-                  <button className="btn-logo cd-btn-half" onClick={() => setShowEnrollPopup(true)}>
-                    <i className="fas fa-graduation-cap"></i> Enroll Now
-                  </button>
-                  <button className="btn-logo cd-btn-half" onClick={() => setShowCurriculumModal(true)}>
-                    <i className="fas fa-list"></i> Curriculum
-                  </button>
-                </div>
-              </Reveal>
             </div>
             <div className="cd-right">
               <Reveal>
@@ -82,6 +73,34 @@ export default function CourseDetail() {
               </Reveal>
             </div>
           </div>
+          <Reveal>
+            <div className="cd-btn-row">
+              <button className="cd-btn-half" onClick={() => setShowEnrollPopup(true)}>
+                <span className="cd-btn-icon"><i className="fas fa-graduation-cap"></i></span>
+                <span className="cd-btn-content">
+                  <span className="cd-btn-label">Enroll Now</span>
+                  <span className="cd-btn-desc">Register for this course and secure your spot</span>
+                </span>
+                <span className="cd-btn-arrow"><i className="fas fa-chevron-right"></i></span>
+              </button>
+              <button className="cd-btn-half" onClick={() => setShowCurriculumModal(true)}>
+                <span className="cd-btn-icon"><i className="fas fa-list"></i></span>
+                <span className="cd-btn-content">
+                  <span className="cd-btn-label">Curriculum</span>
+                  <span className="cd-btn-desc">View the complete course syllabus</span>
+                </span>
+                <span className="cd-btn-arrow"><i className="fas fa-chevron-right"></i></span>
+              </button>
+              <button className="cd-btn-half" onClick={() => setShowCertModal(true)}>
+                <span className="cd-btn-icon"><i className="fas fa-certificate"></i></span>
+                <span className="cd-btn-content">
+                  <span className="cd-btn-label">Certificate</span>
+                  <span className="cd-btn-desc">See a sample of your certificate</span>
+                </span>
+                <span className="cd-btn-arrow"><i className="fas fa-chevron-right"></i></span>
+              </button>
+            </div>
+          </Reveal>
           <Reveal>
             <a href={`/${course.brochure}`} download className="btn-logo btn-logo-wide">
               <i className="fas fa-download"></i> Download Brochure
@@ -148,6 +167,33 @@ export default function CourseDetail() {
                 </form>
               </>
             )}
+          </div>
+        </div>
+      )}
+
+      {/* Certificate Modal */}
+      {showCertModal && (
+        <div className="curriculum-modal-overlay" onClick={() => setShowCertModal(false)}>
+          <div className="cert-modal" onClick={(e) => e.stopPropagation()}>
+            <button className="curriculum-modal-close" onClick={() => setShowCertModal(false)}>&times;</button>
+            <h2>Course Certificates</h2>
+            <p style={{ color: 'var(--text-secondary)', marginBottom: 24 }}>
+              Upon completion of {course.title}, you will receive both certificates.
+            </p>
+            <div className="cert-grid">
+              <div className="cert-card">
+                <div className="cert-badge cert-badge-secondary">Participation</div>
+                <div className="cert-image-wrapper">
+                  <img src="/images/certificate-completion.png" alt="Completion Certificate" className="cert-image" />
+                </div>
+              </div>
+              <div className="cert-card">
+                <div className="cert-badge">Completion</div>
+                <div className="cert-image-wrapper">
+                  <img src="/images/certificate-participation.png" alt="Participation Certificate" className="cert-image" />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       )}

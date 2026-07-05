@@ -11,9 +11,9 @@ export default function Footer() {
             <div className="footer-social">
               <a href="#" title="Facebook"><i className="fab fa-facebook-f"></i></a>
               <a href="#" title="Twitter"><i className="fab fa-twitter"></i></a>
-              <a href="#" title="LinkedIn"><i className="fab fa-linkedin-in"></i></a>
-              <a href="#" title="Instagram"><i className="fab fa-instagram"></i></a>
-              <a href="#" title="YouTube"><i className="fab fa-youtube"></i></a>
+              <a href="https://www.linkedin.com/company/flexcoders-in/?originalSubdomain=in" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i className="fab fa-linkedin-in"></i></a>
+              <a href="https://www.instagram.com/flexcoders.in/" target="_blank" rel="noopener noreferrer" title="Instagram"><i className="fab fa-instagram"></i></a>
+              <a href="https://www.youtube.com/@FlexCoders-Tech" target="_blank" rel="noopener noreferrer" title="YouTube"><i className="fab fa-youtube"></i></a>
             </div>
           </div>
           <div>
@@ -39,8 +39,8 @@ export default function Footer() {
           <div>
             <h4>Contact</h4>
             <ul className="footer-links">
-               <li><i className="fas fa-map-marker-alt" style={{ marginRight: 8 }}></i> Hyderabad, Telangana, India</li>
-              <li><i className="fas fa-phone" style={{ marginRight: 8 }}></i> +91 90307 21969</li>
+               <li><i className="fas fa-map-marker-alt" style={{ marginRight: 8 }}></i> Madhapur, Hyderabad, Telangana, India</li>
+              <li><i className="fas fa-phone" style={{ marginRight: 8 }}></i> +91 9989783404</li>
               <li><i className="fas fa-envelope" style={{ marginRight: 8 }}></i> info@flexcoders.in</li>
             </ul>
           </div>
