@@ -3,6 +3,7 @@ import PageHeader from '../components/PageHeader';
 import Reveal from '../components/Reveal';
 import { useState, useEffect } from 'react';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, ResponsiveContainer, Tooltip } from 'recharts';
+import { useTheme } from '../context/ThemeContext';
 
 function GrowthChart() {
   const [chartSize, setChartSize] = useState({ height: 300, rightMargin: 40, leftMargin: 10, tickSize: 14, dotR: 6 });
@@ -79,6 +80,7 @@ function GrowthChart() {
 }
 
 export default function About() {
+  const { theme } = useTheme();
   return (
     <>
       <PageHeader title="About Us" subtitle="Discover our mission, meet our founders, and learn what drives us." />
@@ -123,40 +125,76 @@ export default function About() {
         </div>
       </section>
 
-      {/* OUR MISSION */}
-      <section className="section">
+      {/* MISSION & VISION */}
+      <section className="section mv-section">
         <div className="container">
-          <div className="ms-row">
+          {/* Header */}
+          <div className="mv-header">
+            <Reveal><span className="mv-pill">OUR PURPOSE</span></Reveal>
+            <Reveal><h2 className="mv-title">Our Mission &amp; Vision</h2></Reveal>
+            <Reveal><p className="mv-subtitle">Building the next generation of skilled professionals through practical learning, expert mentorship, and career-focused education.</p></Reveal>
+          </div>
+
+          {/* Mission Row */}
+          <div className="mv-row">
             <Reveal className="reveal-left">
-              <div className="ms-card">
-                <span className="ms-emoji">🎯</span>
-                <h3>Our Mission</h3>
+              <div className="mv-content">
+                <div className="mv-badge">
+                  <span className="mv-badge-icon">🎯</span>
+                  <span>Our Mission</span>
+                </div>
+                <h3 className="mv-heading">Empowering Careers Through Practical Learning</h3>
+                <p className="mv-text">At FlexCoders, our mission is to bridge the gap between academic education and industry expectations by providing practical, skill-oriented, and career-focused training. We equip students and aspiring professionals with in-demand technical expertise, real-world project experience, problem-solving abilities, and effective communication skills to help them succeed in today's competitive IT industry.</p>
+                <div className="mv-features">
+                  {[
+                    { icon: 'fa-book-open', text: 'Industry-Relevant Curriculum' },
+                    { icon: 'fa-laptop-code', text: 'Hands-on Live Projects' },
+                    { icon: 'fa-chalkboard-user', text: 'Expert Mentorship' },
+                    { icon: 'fa-briefcase', text: 'Career & Placement Support' },
+                  ].map((f, i) => (
+                    <div key={i} className="mv-feature-item">
+                      <div className="mv-feature-icon"><i className={`fas ${f.icon}`}></i></div>
+                      <span>{f.text}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </Reveal>
             <Reveal className="reveal-right">
-              <div className="ms-desc">
-                <p>To democratize quality education and make industry-relevant skills accessible to everyone. We create learning experiences that are practical, engaging, and career-focused — bridging the gap between academic knowledge and industry expectations.</p>
-                <p>Through hands-on projects, expert mentorship, and dedicated placement support, we empower thousands of learners to build the careers they deserve.</p>
+              <div className="mv-illustration">
+                <img src={theme === 'dark' ? '/images/mv-vision-b.png' : '/images/mv-vision.png'} alt="Mission illustration" className="mv-ill-img" />
               </div>
             </Reveal>
           </div>
-        </div>
-      </section>
 
-      {/* OUR VISION */}
-      <section className="section" style={{ background: 'var(--bg-secondary)' }}>
-        <div className="container">
-          <div className="vs-row">
+          {/* Vision Row (alternating) */}
+          <div className="mv-row mv-row-alt">
             <Reveal className="reveal-left">
-              <div className="vs-card">
-                <span className="vs-emoji">🔭</span>
-                <h3>Our Vision</h3>
+              <div className="mv-illustration">
+                <img src={theme === 'dark' ? '/images/mv-mission.png' : '/images/mv-mission-b.png'} alt="Vision illustration" className="mv-ill-img" />
               </div>
             </Reveal>
             <Reveal className="reveal-right">
-              <div className="vs-desc">
-                <p>To be the most trusted learning platform that empowers millions of professionals worldwide. We are building a future where expert-led education is accessible to everyone, everywhere — transforming careers through knowledge and support.</p>
-                <p>With a commitment to innovation and excellence, we aim to reach every corner of the globe and make a lasting impact on the world of education.</p>
+              <div className="mv-content">
+                <div className="mv-badge">
+                  <span className="mv-badge-icon">🔭</span>
+                  <span>Our Vision</span>
+                </div>
+                <h3 className="mv-heading">Creating Future-Ready Professionals Worldwide</h3>
+                <p className="mv-text">Our vision is to become a trusted and leading EdTech platform that transforms education through innovation, accessibility, and excellence. We aspire to empower learners with industry-ready skills, continuous mentorship, and career guidance, enabling them to build successful careers and make a meaningful impact in the global technology ecosystem.</p>
+                <div className="mv-features">
+                  {[
+                    { icon: 'fa-shield-halved', text: 'Trusted Learning Platform' },
+                    { icon: 'fa-globe', text: 'Global Learning Community' },
+                    { icon: 'fa-microchip', text: 'Continuous Innovation' },
+                    { icon: 'fa-trophy', text: 'Career Success for Every Learner' },
+                  ].map((f, i) => (
+                    <div key={i} className="mv-feature-item">
+                      <div className="mv-feature-icon"><i className={`fas ${f.icon}`}></i></div>
+                      <span>{f.text}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </Reveal>
           </div>

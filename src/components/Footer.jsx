@@ -39,9 +39,9 @@ export default function Footer() {
           <div>
             <h4>Contact</h4>
             <ul className="footer-links">
-               <li><i className="fas fa-map-marker-alt" style={{ marginRight: 8 }}></i> Madhapur, Hyderabad, Telangana, India</li>
-              <li><i className="fas fa-phone" style={{ marginRight: 8 }}></i> +91 9989783404</li>
-              <li><i className="fas fa-envelope" style={{ marginRight: 8 }}></i> info@flexcoders.in</li>
+               <li><i className="fas fa-map-marker-alt"></i> Madhapur, Hyderabad, Telangana, India</li>
+              <li><i className="fas fa-phone"></i> +91 9989783404</li>
+              <li><i className="fas fa-envelope"></i> info@flexcoders.in</li>
             </ul>
           </div>
         </div>
