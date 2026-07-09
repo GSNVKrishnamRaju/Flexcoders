@@ -659,12 +659,127 @@ ul { list-style:none; }
   overflow: hidden;
   position: relative;
 }
-.mv-ill-img {
+
+/* === CSS ILLUSTRATIONS === */
+.ill-container {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  display: block;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
+.ill-mission-bg {
+  background: linear-gradient(135deg, #6C63FF 0%, #4A3FCF 50%, #2D1B8E 100%);
+}
+.ill-vision-bg {
+  background: linear-gradient(135deg, #7C3AED 0%, #6C63FF 50%, #3B1F9E 100%);
+}
+
+/* Laptop */
+.ill-laptop {
+  position: relative;
+  z-index: 2;
+  width: 55%;
+  max-width: 220px;
+}
+.ill-screen {
+  background: #1a1a2e;
+  border-radius: 8px 8px 0 0;
+  padding: 16px 14px 20px;
+  border: 2px solid rgba(255,255,255,0.15);
+  border-bottom: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.ill-code {
+  height: 6px;
+  border-radius: 3px;
+}
+.ill-code-1 { background: #FF6B6B; }
+.ill-code-2 { background: #4ECDC4; }
+.ill-code-3 { background: #FFE66D; }
+.ill-code-4 { background: #A8E6CF; }
+.ill-code-5 { background: #FF8E53; }
+.ill-keyboard {
+  height: 10px;
+  background: rgba(255,255,255,0.12);
+  border-radius: 0 0 6px 6px;
+  margin: 0 8px;
+}
+
+/* Globe */
+.ill-globe {
+  position: relative;
+  z-index: 2;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ill-globe-dot {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #4ECDC4, #2D9B8E);
+  box-shadow: 0 0 30px rgba(78, 205, 196, 0.4);
+  position: relative;
+  z-index: 2;
+}
+.ill-globe-ring {
+  position: absolute;
+  border: 2px solid rgba(255,255,255,0.25);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.ill-ring-1 { width: 100%; height: 100%; }
+.ill-ring-2 { width: 130%; height: 70%; border-color: rgba(255,255,255,0.15); transform: translate(-50%, -50%) rotate(30deg); }
+.ill-ring-3 { width: 160%; height: 50%; border-color: rgba(255,255,255,0.1); transform: translate(-50%, -50%) rotate(-20deg); }
+
+/* Floating Icons */
+.ill-fi {
+  position: absolute;
+  z-index: 3;
+  font-size: 1.5rem;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #fff;
+  animation: ill-float 3s ease-in-out infinite;
+}
+
+@keyframes ill-float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+/* Mission icon positions */
+.ill-mission-bg .ill-fi-1 { top: 10%; left: 8%; animation-delay: 0s; }
+.ill-mission-bg .ill-fi-2 { top: 15%; right: 10%; animation-delay: 0.4s; }
+.ill-mission-bg .ill-fi-3 { bottom: 28%; left: 5%; animation-delay: 0.8s; }
+.ill-mission-bg .ill-fi-4 { bottom: 22%; right: 8%; animation-delay: 1.2s; }
+.ill-mission-bg .ill-fi-5 { top: 48%; left: 3%; animation-delay: 1.6s; }
+.ill-mission-bg .ill-fi-6 { top: 45%; right: 4%; animation-delay: 2s; }
+
+/* Vision icon positions */
+.ill-vision-bg .ill-fi-1 { top: 8%; left: 10%; animation-delay: 0s; }
+.ill-vision-bg .ill-fi-2 { top: 18%; right: 12%; animation-delay: 0.5s; }
+.ill-vision-bg .ill-fi-3 { bottom: 25%; left: 6%; animation-delay: 1s; }
+.ill-vision-bg .ill-fi-4 { bottom: 30%; right: 10%; animation-delay: 1.5s; }
+.ill-vision-bg .ill-fi-5 { top: 50%; left: 5%; animation-delay: 2s; }
+.ill-vision-bg .ill-fi-6 { top: 42%; right: 5%; animation-delay: 2.5s; }
 .founders-grid {
   max-width: 1100px;
   margin: 0 auto;

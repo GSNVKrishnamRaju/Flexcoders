@@ -1,13 +1,6 @@
 const PHONE = '919989783404';
 const MESSAGE = encodeURIComponent(
-  'Hi! I am interested in joining Flexcoders. Could you please share more details about:\n' +
-  '1. Courses offered (Full Stack, Data Science, Cybersecurity, etc.)\n' +
-  '2. Course duration and fee structure\n' +
-  '3. Mode of classes (online/offline)\n' +
-  '4. Placement assistance and past placement record\n' +
-  '5. Upcoming batch start dates\n' +
-  '6. Any free demo class available\n\n' +
-  'Looking forward to your response. Thank you!'
+  "Hello, May I Know More About FlexCoders! "
 );
 
 export default function WhatsAppButton() {

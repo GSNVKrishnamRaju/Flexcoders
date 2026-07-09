@@ -61,9 +61,9 @@ export default function CourseDetail() {
               <Reveal>
                 <div className="cd-price-row">
                   <span className="course-price" style={{ margin: 0 }}>{course.price}</span>
-                  <button className="btn-logo" onClick={() => alert('Payment gateway coming soon!')}>
+                  <a href="https://razorpay.me/@flexcoders" target="_blank" rel="noopener noreferrer" className="btn-logo">
                     <i className="fas fa-credit-card"></i> Pay Now
-                  </button>
+                  </a>
                 </div>
               </Reveal>
             </div>
@@ -258,7 +258,7 @@ export default function CourseDetail() {
           <h2 className="cta-heading">Ready to Get Started?</h2>
           <p style={{ color: 'var(--text-secondary)', marginBottom: 32, fontSize: '1.1rem' }}>Enroll now and take the first step towards your career.</p>
           <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link to="/contact?ref=enroll" className="btn-logo"><i className="fas fa-graduation-cap"></i> Enroll Now — {course.price}</Link>
+            <Link to="/contact?ref=enroll" className="btn-logo"><i className="fas fa-graduation-cap"></i> Enroll Now </Link>
             <Link to="/courses" className="btn-outline-logo"><i className="fas fa-arrow-left"></i> Back to Courses</Link>
           </div>
         </div>

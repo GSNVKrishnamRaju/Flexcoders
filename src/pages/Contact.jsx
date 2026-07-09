@@ -79,7 +79,7 @@ export default function Contact() {
                   { icon: '📍', title: 'Visit Us', detail: <>Madhapur, Hyderabad, Telangana, India</> },
                   { icon: '📞', title: 'Call Us', detail: <>+91 9989783404</> },
                   { icon: '✉️', title: 'Email Us', detail: <>info@flexcoders.in </> },
-                  { icon: '🕐', title: 'Working Hours', detail: <>Mon - Sat: 9:00 AM - 8:00 PM<br />Sunday: 10:00 AM - 4:00 PM</> },
+                  { icon: '🕐', title: 'Working Hours', detail: <>Mon - Sat: 10:00 AM - 07:00 PM<br />Sunday: Closed </> },
                 ].map((c, i) => (
                   <div className="contact-info-card" key={i}>
                     <div className="contact-info-icon">{c.icon}</div>
