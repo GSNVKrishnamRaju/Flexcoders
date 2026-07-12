@@ -6,7 +6,7 @@ import { allCourses } from '../data/coursesData';
 export default function Courses() {
   return (
     <>
-      <PageHeader title="Our Courses" subtitle="Industry-focused programs designed to launch your career. Choose from 8+ expert-led courses." />
+      <PageHeader title="Our Courses" subtitle="Industry-focused programs designed to launch your career. Choose from 25+ expert-led courses." />
 
       <section className="section">
         <div className="container">
